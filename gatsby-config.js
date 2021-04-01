@@ -1,11 +1,31 @@
+/* eslint-disable no-undef */
+const path = require('path');
+
+require('dotenv').config({ path: '.env' });
+
+const title = 'Twala Blog';
+const siteUrl = 'https://blog.twala.io';
+const siteImage =
+  'https://twala-web-assets.s3-ap-southeast-1.amazonaws.com/twala_banner.png';
+const description =
+  'Digitally transform your business with a legally-binding, private and secured electronic signature.';
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    title,
+    siteImage,
+    description,
+    siteUrl,
+    author: 'Edil Salvador',
   },
   plugins: [
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Rubik:400,500,700'],
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
