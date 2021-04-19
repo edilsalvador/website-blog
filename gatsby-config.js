@@ -26,6 +26,23 @@ module.exports = {
         fonts: ['Rubik:400,500,700'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        ['src']: `${__dirname}/src`,
+        ['cms']: `${__dirname}/src/cms`,
+        ['pages']: `${__dirname}/src/pages`,
+        ['templates']: `${__dirname}/src/templates`,
+        ['components']: `${__dirname}/src/components`,
+        ['fonts']: `${__dirname}/src/fonts`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
